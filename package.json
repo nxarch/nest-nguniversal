@@ -2,19 +2,59 @@
   "name": "nest-nguniversal",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
-  "private": true,
-  "dependencies": {},
-  "devDependencies": {
-    "@nrwl/cli": "13.10.6",
-    "@nrwl/nx-cloud": "latest",
-    "@nrwl/workspace": "13.10.6",
-    "@types/node": "16.11.7",
-    "nx": "13.10.6",
-    "prettier": "^2.5.1",
-    "typescript": "~4.6.2"
+  "scripts": {
+    "start": "nx serve",
+    "build": "nx build",
+    "test": "nx test",
+    "build:all": "nx run-many --all --target=build",
+    "lint:all": "nx run-many --all --target=lint --fix",
+    "test:all": "nx run-many --all --target=test",
+    "prepare": "husky install",
+    "format": "nx format:write --all",
+    "lint:affected": "nx affected:lint --base origin/develop",
+    "test:affected": "nx affected:test --base origin/develop",
+    "build:affected": "nx affected:build --base origin/develop",
+    "c": "git-cz"
   },
-  "workspaces": [
-    "packages/**"
-  ]
+  "private": true,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@jscutlery/semver": "^2.25.2",
+    "@nrwl/cli": "14.5.1",
+    "@nrwl/eslint-plugin-nx": "14.5.1",
+    "@nrwl/jest": "14.5.1",
+    "@nrwl/js": "14.5.1",
+    "@nrwl/linter": "14.5.1",
+    "@nrwl/nx-cloud": "14.2.0",
+    "@nrwl/web": "^14.5.1",
+    "@nrwl/workspace": "14.5.1",
+    "@types/jest": "27.4.1",
+    "@types/node": "16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "~8.15.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-import": "^2.26.0",
+    "git-cz": "^4.9.0",
+    "husky": "^8.0.1",
+    "jest": "27.5.1",
+    "lint-staged": "^13.0.3",
+    "nx": "14.5.1",
+    "prettier": "2.7.1",
+    "ts-jest": "27.1.4",
+    "ts-node": "~10.8.0",
+    "typescript": "4.7.4"
+  },
+  "lint-staged": {
+    "*.{ts,json,html,tsx,js}": "yarn format"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  }
 }

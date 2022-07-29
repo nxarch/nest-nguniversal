@@ -1,0 +1,39 @@
+name: Merge Action
+
+description: Merge two branches
+
+inputs:
+  baseBranch:
+    description: Merge into branch
+    required: true
+  fromBranch:
+    description: Merge this branch into baseBranch
+    required: true
+  push:
+    description: Push to origin
+    required: false
+    default: 'true'
+
+runs:
+  using: composite
+  steps:
+    - name: Merge branches ${{ inputs.fromBranch }} into ${{ inputs.baseBranch }}
+      if: ${{ inputs.push == 'true' }}
+      env:
+        GITHUB_TOKEN: ${{ inputs.github_token }}
+      shell: bash
+      run: |
+        git fetch --all --tags && \
+        git checkout ${{ inputs.baseBranch }} --force && git pull && \
+        git merge --no-commit -X theirs origin/${{ inputs.fromBranch }} && \
+        git push origin --force
+
+    - name: Merge branches ${{ inputs.fromBranch }} into ${{ inputs.baseBranch }} (locally)
+      if: ${{ inputs.push != 'true' }}
+      env:
+        GITHUB_TOKEN: ${{ inputs.github_token }}
+      shell: bash
+      run: |
+        git fetch --all --tags && \
+        git checkout ${{ inputs.baseBranch }} --force && git pull && \
+        git merge --no-commit -X theirs origin/${{ inputs.fromBranch }}
