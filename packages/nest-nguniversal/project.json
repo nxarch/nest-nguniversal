@@ -3,6 +3,24 @@
   "sourceRoot": "packages/nest-nguniversal/src",
   "projectType": "library",
   "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nest-nguniversal",
+        "main": "packages/nest-nguniversal/src/index.ts",
+        "project": "packages/nest-nguniversal/package.json",
+        "index": "packages/nest-nguniversal/src/index.ts",
+        "tsConfig": "packages/nest-nguniversal/tsconfig.lib.json",
+        "assets": [
+          {
+            "glob": "README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
@@ -16,6 +34,30 @@
       "options": {
         "jestConfig": "packages/nest-nguniversal/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "push": true,
+        "noVerify": true,
+        "baseBranch": "master",
+        "preset": "conventional",
+        "tagPrefix": "${projectName}@",
+        "postTargets": ["nest-nguniversal:github", "nest-nguniversal:publish"]
+      }
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "${tag}",
+        "notes": "${notes}"
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
       }
     }
   },
