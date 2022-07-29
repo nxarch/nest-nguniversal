@@ -1,5 +1,5 @@
 <p align="center">
- <img width="65%" height="65%" src="nest-nguniversal.png">
+ <img width="75%" height="75%" src="nest-nguniversal.png">
 </p>
 
 # Nest-Nguniversal
