@@ -9,12 +9,15 @@
       "options": {
         "outputPath": "dist/packages/nest-nguniversal",
         "main": "packages/nest-nguniversal/src/index.ts",
-        "project": "packages/nest-nguniversal/package.json",
-        "index": "packages/nest-nguniversal/src/index.ts",
         "tsConfig": "packages/nest-nguniversal/tsconfig.lib.json",
         "assets": [
           {
-            "glob": "README.md",
+            "glob": "*.md",
+            "input": "packages/nest-nguniversal",
+            "output": "."
+          },
+          {
+            "glob": "LICENSE",
             "input": ".",
             "output": "."
           }
