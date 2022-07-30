@@ -1,22 +1,22 @@
-// import * as domino from 'domino';
-// import { readFileSync } from 'fs';
-//
-// export function applyDomino(global: Record<PropertyKey, unknown>, templatePath: string) {
-//   const template = readFileSync(templatePath).toString();
-//   const win = domino.createWindow(template);
-//
-//   global['window'] = win;
-//   Object.defineProperty(win.document.body.style, 'transform', createTransformOptions());
-//   global['document'] = win.document;
-//   global['navigator'] = win.navigator;
-//   global['CSS'] = null;
-//   global['Prism'] = null;
-// }
-//
-// export function createTransformOptions() {
-//   const value = () => ({
-//     enumerable: true,
-//     configurable: true,
-//   });
-//   return { value };
-// }
+import * as domino from 'domino';
+import { readFileSync } from 'fs';
+
+export function applyDomino(global: Record<PropertyKey, unknown>, templatePath: string) {
+  const template = readFileSync(templatePath).toString();
+  const win = domino.createWindow(template);
+
+  global['window'] = win;
+  Object.defineProperty(win.document.body.style, 'transform', createTransformOptions());
+  global['document'] = win.document;
+  global['navigator'] = win.navigator;
+  global['CSS'] = null;
+  global['Prism'] = null;
+}
+
+export function createTransformOptions() {
+  const value = () => ({
+    enumerable: true,
+    configurable: true,
+  });
+  return { value };
+}
