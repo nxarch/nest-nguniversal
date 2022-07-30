@@ -20,6 +20,13 @@ jobs:
         shell: bash
         run: git config user.email "-" && git config user.name "🤖 Release Bot"
 
+      - name: Merge develop -> master
+        uses: ./.github/actions/merge
+        with:
+          baseBranch: master
+          fromBranch: develop
+          push: false
+
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -29,13 +36,6 @@ jobs:
       - name: yarn install
         shell: bash
         run: yarn install --immutable --immutable-cache
-
-      - name: Merge develop -> master
-        uses: ./.github/actions/merge
-        with:
-          baseBranch: master
-          fromBranch: develop
-          push: false
 
       - name: Bump new version and update changelog
         env:
