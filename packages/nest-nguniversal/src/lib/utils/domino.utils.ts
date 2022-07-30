@@ -18,5 +18,6 @@ export function createTransformOptions() {
     enumerable: true,
     configurable: true,
   });
+
   return { value };
 }
