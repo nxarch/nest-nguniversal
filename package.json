@@ -63,6 +63,6 @@
     }
   },
   "lint-staged": {
-    "*.{ts,json,html,tsx,js}": "yarn format"
+    "*.{ts,json,html,tsx,js,md}": "yarn format"
   }
 }
