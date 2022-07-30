@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nest-nguniversal/nest-nguniversal": ["packages/nest-nguniversal/src/index.ts"]
+      "@nest-nguniversal/nest-nguniversal": ["packages/nest-nguniversal/src/index.ts"],
+      "@nxarch/remove": ["packages/remove/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
