@@ -26,7 +26,8 @@ runs:
         git fetch --all --tags && \
         git checkout ${{ inputs.baseBranch }} --force && git pull && \
         git merge --no-commit -X theirs origin/${{ inputs.fromBranch }} && \
-        git push origin --force
+        git push origin --force && \
+        git status
 
     - name: Merge branches ${{ inputs.fromBranch }} into ${{ inputs.baseBranch }} (locally)
       if: ${{ inputs.push != 'true' }}
@@ -36,4 +37,5 @@ runs:
       run: |
         git fetch --all --tags && \
         git checkout ${{ inputs.baseBranch }} --force && git pull && \
-        git merge --no-commit -X theirs origin/${{ inputs.fromBranch }}
+        git merge --no-commit -X theirs origin/${{ inputs.fromBranch }} && \
+        git status

@@ -20,18 +20,18 @@ jobs:
         shell: bash
         run: git config user.email "-" && git config user.name "🤖 Release Bot"
 
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node_version }}
+          registry-url: https://registry.npmjs.org
+
       - name: Merge develop -> master
         uses: ./.github/actions/merge
         with:
           baseBranch: master
           fromBranch: develop
           push: false
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ inputs.node_version }}
-          registry-url: https://registry.npmjs.org
 
       - name: yarn install
         shell: bash
