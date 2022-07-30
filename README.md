@@ -6,18 +6,34 @@
 
 > A module that will integrate your Angular SSR app into your NestJS app.
 
-<p>
+<p align="center">
+<a href="https://github.com/nxarch/nest-nguniversal/actions/workflows/ci.yml">
+  <img src="https://github.com/nxarch/nest-nguniversal/actions/workflows/ci.yml/badge.svg">
+</a>&nbsp;
 
-[![@nxarch/nest-nguniversal](https://github.com/nxarch/nest-nguniversal/actions/workflows/ci.yml/badge.svg)](https://github.com/nxarch/nest-nguniversal/actions/workflows/ci.yml)
-[![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)]()
-[![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e5079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+<a href="https://www.npmjs.com/@nxarch/nest-nguniversal">
+  <img src="https://img.shields.io/npm/v/@nxarch/nest-nguniversal.svg?logo=npm&logoColor=fff&label=NPM+package&color=limegreen" alt="NxArch on npm" />
+</a>&nbsp;
+
+<a href="https://github.com/nxarch/nest-nguniversal/CONTRIBUTING.md">
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg">
+</a>&nbsp;
+
+<a href="https://github.com/semantic-release/semantic-release">
+  <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e5079.svg">
+</a>&nbsp;
+
+<a href="https://discord.gg/G7Qnnhy" target="_blank">
+  <img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord NestJS"/>
+</a>&nbsp;
+
+<a href="https://discord.gg/angular">
+  <img src="https://img.shields.io/discord/463752820026376202.svg?logo=discord&logoColor=fff&label=Discord&color=7389d8" alt="Discord conversation" />
+</a>
 
 </p>
 
-Kudos to @kamilmysliwiec as this library is an extension
-of [@nestjs/ng-universal](https://github.com/nestjs/ng-universal).
+Kudos to the contributors of [@nestjs/ng-universal](https://github.com/nestjs/ng-universal) as this library is an extension of this repository.
 
 ## Prerequisites
 
@@ -27,13 +43,13 @@ Separating compilation enhances DX and reflects that server and ui application h
 This is one possible setup
 
 ```
-├── dist                  
-│   ├── server              
-│   |   ├── main.js             
-│   ├── ssr-app  
-│   |   ├── main.js 
-│   ├── ui-app 
-│   |   ├── main.js              
+├── dist
+│   ├── server
+│   |   ├── main.js
+│   ├── ssr-app
+│   |   ├── main.js
+│   ├── ui-app
+│   |   ├── main.js
 │   |   ├── index.html
 ...
 ```
