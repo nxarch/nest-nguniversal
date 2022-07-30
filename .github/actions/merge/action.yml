@@ -25,7 +25,7 @@ runs:
       run: |
         git fetch --all --tags && \
         git checkout ${{ inputs.baseBranch }} --force && git pull && \
-        git merge --no-commit -X theirs origin/${{ inputs.fromBranch }} && \
+        git merge -X theirs origin/${{ inputs.fromBranch }} && \
         git push origin --force && \
         git status
 
@@ -37,5 +37,5 @@ runs:
       run: |
         git fetch --all --tags && \
         git checkout ${{ inputs.baseBranch }} --force && git pull && \
-        git merge --no-commit -X theirs origin/${{ inputs.fromBranch }} && \
+        git merge -X theirs origin/${{ inputs.fromBranch }} && \
         git status
