@@ -1,0 +1,32 @@
+{
+  "name": "@nxarch/nest-nguniversal",
+  "version": "0.1.0",
+  "description": "A NestJS library to serve your NestJS Angular Universal project",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/nxarch/nest-nguniversal/issues"
+  },
+  "homepage": "https://github.com/nxarch/nest-nguniversal#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nxarch/nest-nguniversal"
+  },
+  "keywords": [
+    "NestJS",
+    "Angular",
+    "server side rendering",
+    "Angular Universal"
+  ],
+  "author": {
+    "name": "Yannick Boetzkes",
+    "email": "code@yannickboetzkes.com",
+    "url": "https://yannickboetzkes.com"
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "peerDependencies": {
+    "typescript": ">= 4.1.2"
+  }
+}

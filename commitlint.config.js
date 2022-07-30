@@ -1,4 +1,4 @@
-const scopes = ['general', 'ci', 'ng-nest'];
+const scopes = ['general', 'ci', 'nest-nguniversal'];
 
 module.exports = {
   extends: ['@commitlint/config-conventional'],

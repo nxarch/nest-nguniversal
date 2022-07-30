@@ -1,5 +1,5 @@
 <p align="center">
- <img width="25%" height="25%" src="nest-nguniversal.png">
+ <img width="75%" height="75%" src="nest-nguniversal.png">
 </p>
 
 # Nest-Nguniversal
@@ -12,7 +12,7 @@ The server uses the AngularUniversalModule provided by [`@nxarch/ng-universal`](
 
 <p>
 
-[![@nxarch/nxarch](https://github.com/nxarch/nxarch/actions/workflows/ci.yml/badge.svg)](https://github.com/nxarch/nxarch/actions/workflows/ci.yml)
+[![@nxarch/nest-nguniversal](https://github.com/nxarch/nest-nguniversal/actions/workflows/ci.yml/badge.svg)](https://github.com/nxarch/nest-nguniversal/actions/workflows/ci.yml)
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)]()
 [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
 [![coc-badge](https://img.shields.io/badge/codeof-conduct-ff69b4.svg?style=flat-square)]()
