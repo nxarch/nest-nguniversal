@@ -40,7 +40,7 @@ export async function setupUniversal(app: any, ngOptions: AngularUniversalOption
         mainSsr = await ngOptions.bootstrap();
       }
 
-      const { AppSsrModule, ngExpressEngine } = mainSsr as MainSsr;
+      const { AppSsrModule, ngExpressEngine } = mainSsr;
 
       ngExpressEngine({
         bootstrap: AppSsrModule || ngOptions.bootstrap,
