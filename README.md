@@ -73,18 +73,18 @@ yarn add @nxarch/nest-nguniversal
 ```ts
 AngularUniversalModule.forRoot({
   bootstrap: join(process.cwd(), 'dist/ssr-app/main.js'),
-  viewsPath: join(process.cwd(), 'dist/ui-app/browser')
-})
+  viewsPath: join(process.cwd(), 'dist/ui-app/browser'),
+});
 ```
 
-[//]: # (explain path setup with api prefix and render route)
+[//]: # 'explain path setup with api prefix and render route'
 
 ## API Spec
 
 The `forRoot()` method takes an options object with a few useful properties.
 
 | Property                  | Type                    | Description                                                                |
-|---------------------------|-------------------------|----------------------------------------------------------------------------|
+| ------------------------- | ----------------------- | -------------------------------------------------------------------------- |
 | `viewsPath`               | string                  | The directory where the module should look for client bundle (Angular app) |
 | `bootstrap`               | string                  | Compiled Angular server module path (Angular SSR app)                      |
 | `useCustomRenderEndpoint` | boolean                 | Use this option to specify your own endpoint to render your Angular app    |
@@ -125,14 +125,14 @@ AngularUniversalModule.forRoot({
   viewsPath: join(process.cwd(), 'dist/ui-app/browser'),
   cache: {
     storage: {
-      useClass: RedisCacheStorage
-    }
+      useClass: RedisCacheStorage,
+    },
     // storage: {
     //   useValue: new InMemoryCacheStorage(),
     // },
     // expiresIn: DEFAULT_CACHE_EXPIRATION_TIME,
     // keyGenerator: new CustomCacheKeyGenerator()
-  }
+  },
 });
 ```
 
@@ -141,7 +141,6 @@ import { CacheStorage } from '@nxarch/nest-nguniversal';
 
 @Injectable()
 export class RedisCacheStorage implements CacheStorage {
-
   constructor(private redisCacheService: RedisCacheService) {}
 
   async get(key: string, request: Request): Promise<string | undefined> {
@@ -161,7 +160,7 @@ export class RedisCacheStorage implements CacheStorage {
 ```typescript
 export class CustomCacheKeyGenerator implements CacheKeyGenerator {
   generateCacheKey(request: Request): string {
-    const md       = new MobileDetect(request.headers['user-agent']);
+    const md = new MobileDetect(request.headers['user-agent']);
     const isMobile = md.mobile() ? 'mobile' : 'desktop';
     return (request.hostname + request.originalUrl + isMobile).toLowerCase();
   }
@@ -178,15 +177,15 @@ This is useful for things like setting the response code to 404 when your Angula
 i.e. `path: '**'` in routing):
 
 ```ts
-import { Response }                                 from 'express';
+import { Response } from 'express';
 import { Component, Inject, Optional, PLATFORM_ID } from '@angular/core';
-import { isPlatformServer }                         from '@angular/common';
-import { RESPONSE }                                 from '@nestjs/ng-universal/tokens';
+import { isPlatformServer } from '@angular/common';
+import { RESPONSE } from '@nestjs/ng-universal/tokens';
 
 @Component({
   selector: 'my-not-found',
   templateUrl: './not-found.component.html',
-  styleUrls: ['./not-found.component.scss']
+  styleUrls: ['./not-found.component.scss'],
 })
 export class NotFoundComponent {
   constructor(
@@ -194,7 +193,7 @@ export class NotFoundComponent {
     private readonly platformId: any,
     @Optional()
     @Inject(RESPONSE)
-      res: Response
+    res: Response
   ) {
     // `res` is the express response, only available on the server
     if (isPlatformServer(this.platformId)) {

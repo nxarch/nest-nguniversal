@@ -61,5 +61,8 @@
     "commitizen": {
       "path": "git-cz"
     }
+  },
+  "lint-staged": {
+    "*.{ts,json,html,tsx,js}": "yarn format"
   }
 }
