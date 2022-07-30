@@ -1,5 +1,5 @@
-import { CacheStorage } from './cache-storage.interface';
 import { Abstract, Scope, Type } from '@nestjs/common';
+import { CacheStorage } from './cache-storage.interface';
 
 export interface CacheKeyGenerator {
   generateCacheKey(request: any): string;
@@ -22,7 +22,7 @@ export interface FixedTokenValueProvider<T = any> {
 
 export interface FixedTokenFactoryProvider<T = any> {
   useFactory: (...args: any[]) => T;
-  inject?: Array<Type<any> | string | symbol | Abstract<any> | Function>;
+  inject?: Array<Type<any> | string | symbol | Abstract<any> | ((...args: any) => any)>;
   scope?: Scope;
 }
 

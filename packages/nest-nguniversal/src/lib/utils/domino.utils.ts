@@ -1,6 +1,5 @@
+import * as domino from 'domino';
 import { readFileSync } from 'fs';
-
-const domino = require('domino');
 
 export function applyDomino(global: Record<PropertyKey, unknown>, templatePath: string) {
   const template = readFileSync(templatePath).toString();

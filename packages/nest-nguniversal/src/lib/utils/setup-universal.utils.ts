@@ -9,7 +9,7 @@ import { CacheStorage } from '../interfaces/cache-storage.interface';
 
 const DEFAULT_CACHE_EXPIRATION_TIME = 60000; // 60 seconds
 
-declare var __non_webpack_require__: any;
+declare let __non_webpack_require__: any;
 
 export async function setupUniversal(app: any, ngOptions: AngularUniversalOptions, ngStorageProvider: CacheStorage) {
   const logger = new Logger('AngularUniversalModule');
