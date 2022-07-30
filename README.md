@@ -6,6 +6,10 @@
 
 > A module that will integrate your Angular SSR app into your NestJS app.
 
+This module takes care of incorporating the Angular Universal application and forwarding requests to their desired
+destination.
+Angular Universal will render the requested view which will then be served by the NestJS server.
+
 <p align="center">
 <a href="https://github.com/nxarch/nest-nguniversal/actions/workflows/ci.yml">
   <img src="https://github.com/nxarch/nest-nguniversal/actions/workflows/ci.yml/badge.svg" />
@@ -30,7 +34,6 @@
 <a href="https://discord.gg/angular">
   <img src="https://img.shields.io/discord/463752820026376202.svg?logo=discord&logoColor=fff&label=Discord&color=7389d8" alt="Discord conversation" />
 </a>
-
 </p>
 
 Kudos to the contributors of [@nestjs/ng-universal](https://github.com/nestjs/ng-universal) as this library is an
@@ -56,7 +59,7 @@ This is one possible setup
 ```
 
 In order to immensely simplify the process use [@nxarch/nxarch](https://github.com/nxarch/nxarch). This library
-will set up everything with on simple command.
+will set up everything with one simple command.
 
 ## Installation
 

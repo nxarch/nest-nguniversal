@@ -13,7 +13,7 @@
         "assets": [
           {
             "glob": "*.md",
-            "input": "packages/nest-nguniversal",
+            "input": ".",
             "output": "."
           },
           {
