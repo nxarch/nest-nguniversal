@@ -74,6 +74,8 @@ AngularUniversalModule.forRoot({
 })
 ```
 
+[//]: # (explain path setup with api prefix and render route)
+
 ## API Spec
 
 The `forRoot()` method takes an options object with a few useful properties.
@@ -94,7 +96,8 @@ The `forRoot()` method takes an options object with a few useful properties.
 ### Custom Render Endpoint
 
 If you chose to use your own implementation for the route where the Angular app is going to be rendered and returned
-make sure to implement a Controller accordingly.
+make sure to implement a Controller accordingly.<br>
+Make sure to include the controller in your module.
 
 ```ts
 export class RenderController {
