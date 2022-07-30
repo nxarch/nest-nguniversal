@@ -33,7 +33,8 @@
 
 </p>
 
-Kudos to the contributors of [@nestjs/ng-universal](https://github.com/nestjs/ng-universal) as this library is an extension of this repository.
+Kudos to the contributors of [@nestjs/ng-universal](https://github.com/nestjs/ng-universal) as this library is an
+extension of this repository.
 
 ## Prerequisites
 
@@ -89,6 +90,20 @@ The `forRoot()` method takes an options object with a few useful properties.
 | `inlineCriticalCss`       | boolean?                | Reduce render blocking requests by inlining critical CSS. (default: true)  |
 | `cache`                   | boolean? \ CacheOptions | Cache options, description below (default: `true`; uses InMemoryCache)     |
 | `errorHandler`            | Function?               | Callback to be called in case of a rendering error                         |
+
+### Custom Render Endpoint
+
+If you chose to use your own implementation for the route where the Angular app is going to be rendered and returned
+make sure to implement a Controller accordingly.
+
+```ts
+export class RenderController {
+  @Get('*')
+  render(@Req() req: Request, @Res() res: Response, @Next() next: NextFunction) {
+    res.render(this.viewsPath + '/index.html', { req, res });
+  }
+}
+```
 
 ### Cache
 
