@@ -160,7 +160,7 @@ export class RedisCacheStorage implements CacheStorage {
 ```typescript
 export class CustomCacheKeyGenerator implements CacheKeyGenerator {
   generateCacheKey(request: Request): string {
-    const md       = new MobileDetect(request.headers['user-agent']);
+    const md = new MobileDetect(request.headers['user-agent']);
     const isMobile = md.mobile() ? 'mobile' : 'desktop';
     return (request.hostname + request.originalUrl + isMobile).toLowerCase();
   }
@@ -177,10 +177,10 @@ This is useful for things like setting the response code to 404 when your Angula
 i.e. `path: '**'` in routing):
 
 ```ts
-import { isPlatformServer }                         from '@angular/common';
+import { isPlatformServer } from '@angular/common';
 import { Component, Inject, Optional, PLATFORM_ID } from '@angular/core';
-import { RESPONSE }                                 from '@nestjs/ng-universal/tokens';
-import { Response }                                 from 'express';
+import { RESPONSE } from '@nestjs/ng-universal/tokens';
+import { Response } from 'express';
 
 @Component({
   selector: 'my-not-found',
@@ -188,10 +188,7 @@ import { Response }                                 from 'express';
   styleUrls: ['./not-found.component.scss'],
 })
 export class NotFoundComponent {
-  constructor(
-    @Inject(PLATFORM_ID) private readonly platformId: any,
-    @Optional() @Inject(RESPONSE) res: Response
-  ) {
+  constructor(@Inject(PLATFORM_ID) private readonly platformId: any, @Optional() @Inject(RESPONSE) res: Response) {
     // `res` is the express response, only available on the server
     if (isPlatformServer(this.platformId)) {
       res.status(404);
