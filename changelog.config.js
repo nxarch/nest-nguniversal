@@ -5,7 +5,7 @@ module.exports = {
   minMessageLength: 3,
   format: '{type}({scope}): {emoji}{subject}',
   questions: ['type', 'scope', 'subject', 'body', 'breaking', 'issues'],
-  scopes: ['ng-nest', 'general'],
+  scopes: ['nest-nguniversal', 'general'],
   types: {
     chore: {
       description: 'Build process or auxiliary tool changes',

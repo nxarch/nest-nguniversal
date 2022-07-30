@@ -7,7 +7,7 @@ body:
     attributes:
       label: Which @nest-nguniversal/* package(s) are the source of the bug?
       options:
-        - ng-nest
+        - nest-nguniversal
         - Don't known / other
       multiple: true
     validations:
