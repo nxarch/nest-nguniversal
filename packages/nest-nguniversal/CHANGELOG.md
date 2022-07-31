@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.1.2...nest-nguniversal@0.2.0) (2022-07-31)
+
+
+### Features
+
+* **nest-nguniversal:** add transfer state and token utilities ([4714fe7](https://github.com/nxarch/nest-nguniversal/commit/4714fe72df41f24f7b0f9c8062a36873399560e4))
+* **nest-nguniversal:** expose transfer state and token utilities ([f0457a4](https://github.com/nxarch/nest-nguniversal/commit/f0457a48519808f92cbc033ab543974ab9bf445a))
+
 ### [0.1.2](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.1.1...nest-nguniversal@0.1.2) (2022-07-31)
 
 
