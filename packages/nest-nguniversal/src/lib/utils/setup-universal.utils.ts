@@ -29,7 +29,7 @@ export async function setupUniversal(app: any, ngOptions: AngularUniversalOption
         }
       }
 
-      // todo maybe move above to only run on initialization;
+      // todo maybe move above app.engine to only run on initialization;
       // make sure to reload app on any ssr changes if mainSsr is evaluated only once on app startup
       let mainSsr: MainSsr;
       if (typeof ngOptions.bootstrap === 'string') {

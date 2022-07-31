@@ -36,13 +36,13 @@ Angular Universal will render the requested view which will then be served by th
 </a>
 </p>
 
-Kudos to the contributors of [@nestjs/ng-universal](https://github.com/nestjs/ng-universal) as this library is an
-extension of this repository.
+Kudos to the contributors of [@nestjs/ng-universal](https://github.com/nestjs/ng-universal) as this library is built on
+top of this repository.
 
 ## Prerequisites
 
-This library requires seperated ui-app, ssr-app and server-app bundles.
-Separating compilation enhances DX and reflects that server and ui application handled differently.
+This library requires separate ui, ssr and server bundles.
+Separating compilation enhances DX and reflects that server and ui applications handled differently.
 
 This is one possible setup
 
@@ -58,8 +58,8 @@ This is one possible setup
 ...
 ```
 
-In order to immensely simplify the process use [@nxarch/nxarch](https://github.com/nxarch/nxarch). This library
-will set up everything with one simple command.
+**&rarr; In order to immensely simplify the process use [@nxarch/nxarch](https://github.com/nxarch/nxarch). This library
+will set up everything with one simple command.**
 
 ## Installation
 
@@ -76,8 +76,6 @@ AngularUniversalModule.forRoot({
   viewsPath: join(process.cwd(), 'dist/ui-app/browser'),
 });
 ```
-
-[//]: # 'document path setup with api prefix and render route'
 
 ## API Spec
 
@@ -96,11 +94,27 @@ The `forRoot()` method takes an options object with a few useful properties.
 | `cache`                   | boolean? \ CacheOptions | Cache options, description below (default: `true`; uses InMemoryCache)     |
 | `errorHandler`            | Function?               | Callback to be called in case of a rendering error                         |
 
+### Routes
+
+Make sure to prefix your api route to avoid Angular and NestJS route collisions.
+The `renderPath` will be set up after all api routes are registered.
+If you choose to use the default render path (\*) all requests to routes that aren't specified inside your API
+controllers
+will be funneled to Angular Universals ngExpressEngine to render the Angular view.
+
+```ts
+// main.ts - e.g. use this
+async function bootstrap() {
+  // ...
+  app.setGlobalPrefix('api');
+}
+```
+
 ### Custom Render Endpoint
 
 If you chose to use your own implementation for the route where the Angular app is going to be rendered and returned
 make sure to implement a Controller accordingly.<br>
-Make sure to include the controller in your module.
+Also Make sure to include the RenderController in your module.
 
 ```ts
 export class RenderController {
@@ -121,12 +135,12 @@ export class RenderController {
 
 ```ts
 AngularUniversalModule.forRoot({
-  bootstrap: join(process.cwd(), 'dist/ssr-app/main.js'),
-  viewsPath: join(process.cwd(), 'dist/ui-app/browser'),
+  // ...
   cache: {
     storage: {
       useClass: RedisCacheStorage,
     },
+    // or
     // storage: {
     //   useValue: new InMemoryCacheStorage(),
     // },
@@ -135,6 +149,8 @@ AngularUniversalModule.forRoot({
   },
 });
 ```
+
+### Example for RedisCacheStorage:
 
 ```ts
 import { CacheStorage } from '@nxarch/nest-nguniversal';
@@ -167,7 +183,7 @@ export class CustomCacheKeyGenerator implements CacheKeyGenerator {
 }
 ```
 
-## Request and Response Providers
+### Request and Response Providers
 
 This tool uses `@nguniversal/express-engine` and will properly provide access to the Express Request and Response
 objects in you Angular components. Note that tokens must be imported from the `@nestjs/ng-universal/tokens`,
