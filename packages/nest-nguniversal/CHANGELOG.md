@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.1.1](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.1.0...nest-nguniversal@0.1.1) (2022-07-31)
+
+
+### Bug Fixes
+
+* **nest-nguniversal:** add dependencies to package ([5a4042a](https://github.com/nxarch/nest-nguniversal/commit/5a4042a4066b71a37172f088408ab123d28c5da3))
+
 ## 0.1.0 (2022-07-30)
 
 
