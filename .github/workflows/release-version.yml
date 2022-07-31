@@ -1,0 +1,66 @@
+name: Release Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      level:
+        type: choice
+        required: true
+        description: Which version level should be increased?
+        options:
+          - minor
+          - patch
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node_version: [ 14 ]
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup git user
+        shell: bash
+        run: git config user.email "-" && git config user.name "🤖 Release Bot"
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node_version }}
+          registry-url: https://registry.npmjs.org
+
+      - name: Merge develop -> master
+        uses: ./.github/actions/merge
+        with:
+          baseBranch: master
+          fromBranch: develop
+          push: false
+
+      - name: yarn install
+        shell: bash
+        run: yarn install --immutable --immutable-cache
+
+      - name: Bump new version and update changelog (dry run)
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: npx nx version nest-nguniversal --releaseAs=${github.event.inputs.level} --dryRun
+
+      - name: Bump new version and update changelog
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: npx nx version nest-nguniversal --releaseAs=${github.event.inputs.level}
+
+      - name: Back-merge master -> develop
+        uses: ./.github/actions/merge
+        with:
+          baseBranch: develop
+          fromBranch: master
