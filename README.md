@@ -58,7 +58,7 @@ This is one possible setup
 ...
 ```
 
-**&rarr; In order to immensely simplify the process use [@nxarch/nxarch](https://github.com/nxarch/nxarch). This library
+**&rarr; In order to immensely simplify the process use [@nxarch/ng-nest](https://github.com/nxarch/ng-nest). This library
 will set up everything with one simple command.**
 
 ## Installation
