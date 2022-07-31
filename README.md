@@ -36,7 +36,7 @@ Angular Universal will render the requested view which will then be served by th
 </a>
 </p>
 
-Kudos to the contributors of [@nestjs/ng-universal](https://github.com/nestjs/ng-universal) as this library is built on
+Kudos to the maintainers/contributors of [@nestjs/ng-universal](https://github.com/nestjs/ng-universal) as this library is built on
 top of this repository.
 
 ## Prerequisites
@@ -58,7 +58,7 @@ This is one possible setup
 ...
 ```
 
-**&rarr; In order to immensely simplify the process use [@nxarch/nxarch](https://github.com/nxarch/nxarch). This library
+**&rarr; In order to immensely simplify the process use [@nxarch/ng-nest](https://github.com/nxarch/ng-nest). This library
 will set up everything with one simple command.**
 
 ## Installation
