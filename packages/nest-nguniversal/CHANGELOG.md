@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.2.0...nest-nguniversal@0.3.0) (2022-07-31)
+
+
+### Features
+
+* **nest-nguniversal:** remove angular dependencies ([cabce34](https://github.com/nxarch/nest-nguniversal/commit/cabce340fdd2fed4dae91af3522203ad220a249a))
+
 ## [0.2.0](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.1.2...nest-nguniversal@0.2.0) (2022-07-31)
 
 
