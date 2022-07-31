@@ -12,7 +12,7 @@
         "tsConfig": "packages/nest-nguniversal/tsconfig.lib.json",
         "assets": [
           {
-            "glob": "*.md",
+            "glob": "README.md",
             "input": ".",
             "output": "."
           },
