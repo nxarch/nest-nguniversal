@@ -107,6 +107,27 @@
     rxjs "6.6.7"
     source-map "0.7.4"
 
+"@angular/common@^14.1.0":
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-14.1.0.tgz#84886e7f74c6e475377fdc9150d0d184583ca8f5"
+  integrity sha512-leethDtLbA3qySaOEBUto602DF0qH1maK9u2zHncrUFOpnHAYUEd7N9MFMdIYASurTnwOSglEoIDCML94qzImQ==
+  dependencies:
+    tslib "^2.3.0"
+
+"@angular/core@^14.1.0":
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-14.1.0.tgz#5a0fa164ca180027d4c54a5b70e7357918f9af9b"
+  integrity sha512-3quEsHmQifJOQ2oij5K+cjGjmhsKsyZI1+OTHWNZ6IXeuYviZv4U/Cui9fUJ1RN3CZxH3NzWB3gB/5qYFQfOgg==
+  dependencies:
+    tslib "^2.3.0"
+
+"@angular/platform-browser@^14.1.0":
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-14.1.0.tgz#6259e3fe7eacaffa18679dd588116e23eac7cf6d"
+  integrity sha512-axNXUSqxsP0QSdNskd1pFo2uMo1UNoFaSAB02eDWwLkWQ1pWel+T78HiQY2bNeI3elgzjwPTT4vCCDQKNVTNig==
+  dependencies:
+    tslib "^2.3.0"
+
 "@assemblyscript/loader@^0.10.1":
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/@assemblyscript/loader/-/loader-0.10.1.tgz#70e45678f06c72fa2e350e8553ec4a4d72b92e06"
