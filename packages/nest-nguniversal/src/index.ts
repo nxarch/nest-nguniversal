@@ -5,3 +5,5 @@ export * from './lib/interfaces/angular-universal-options.interface';
 export * from './lib/interfaces/cache-key-generator.interface';
 export * from './lib/interfaces/cache-storage.interface';
 export * from './lib/utils/domino.utils';
+export * from './lib/utils/transfer-state.service';
+export * from './lib/utils/platform.tokens';
