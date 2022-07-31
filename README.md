@@ -70,7 +70,7 @@ npm i @nxarch/nest-nguniversal
 yarn add @nxarch/nest-nguniversal
 ```
 
-### Usage
+## Usage
 
 ```ts
 AngularUniversalModule.forRoot({
