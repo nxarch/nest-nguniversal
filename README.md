@@ -4,7 +4,7 @@
 
 # Nest-Nguniversal
 
-> A module that will integrate your Angular SSR app into your NestJS app.
+> A module that will integrate your Angular SSR app and your NestJS app.
 
 This module takes care of incorporating the Angular Universal application and forwarding requests to their desired
 destination.
