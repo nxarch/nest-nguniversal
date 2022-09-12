@@ -4,7 +4,7 @@
 
 # Nest-Nguniversal
 
-> A module that will integrate your Angular SSR app into your NestJS app.
+> A module that will integrate your Angular SSR app and your NestJS app.
 
 This module takes care of incorporating the Angular Universal application and forwarding requests to their desired
 destination.
@@ -59,9 +59,8 @@ This is one possible setup
 ...
 ```
 
-**&rarr; In order to immensely simplify the process
-use [@nxarch/ng-nest](https://github.com/nxarch/nxarch/tree/master/packages/ng-nest). This library will set up
-everything with one simple command.**
+**&rarr; In order to immensely simplify the setup process use [@nxarch/ng-nest](https://github.com/nxarch/nxarch/tree/master/packages/ng-nest). 
+This library will set up everything with one simple command.**
 
 ## Installation
 
