@@ -50,14 +50,14 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
-        run: npx nx version nest-nguniversal --releaseAs=${github.event.inputs.level} --dryRun
+        run: npx nx version nest-nguniversal --releaseAs=${{github.event.inputs.level}} --dryRun
 
       - name: Bump new version and update changelog
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
-        run: npx nx version nest-nguniversal --releaseAs=${github.event.inputs.level}
+        run: npx nx version nest-nguniversal --releaseAs=${{github.event.inputs.level}} --dryRun
 
       - name: Back-merge master -> develop
         uses: ./.github/actions/merge
