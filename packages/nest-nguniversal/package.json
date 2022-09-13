@@ -27,14 +27,14 @@
   "license": "MIT",
   "sideEffects": false,
   "dependencies": {
-    "@nestjs/common": "^9.0.0",
-    "@nestjs/core": "^9.0.0",
-    "memory-cache": "^0.2.0",
-    "express": "^4.0.0",
-    "reflect-metadata": "^0.1.13",
-    "@angular-devkit/build-angular": "^14.0.0",
-    "domino": "^2.1.6",
-    "@nguniversal/express-engine": "^14.0.0"
+    "@nestjs/common": "9.0.11",
+    "@nestjs/core": "9.0.11",
+    "memory-cache": "0.2.0",
+    "express": "4.18.1",
+    "reflect-metadata": "0.1.13",
+    "@angular-devkit/build-angular": "14.2.2",
+    "domino": "2.1.6",
+    "@nguniversal/express-engine": "14.2.0"
   },
   "peerDependencies": {
     "typescript": ">= 4.1.2"
