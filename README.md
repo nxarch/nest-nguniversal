@@ -69,6 +69,9 @@ npm i @nxarch/nest-nguniversal
 yarn add @nxarch/nest-nguniversal
 ```
 
+Make sure to use one of these environment variables during development: <br>
+`APP_ENV=development` or `REMOVE_WEBPACK_CACHE=true`
+
 ## Usage
 
 ```ts

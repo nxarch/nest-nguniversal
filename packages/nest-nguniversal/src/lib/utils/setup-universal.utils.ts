@@ -29,12 +29,17 @@ export async function setupUniversal(app: any, ngOptions: AngularUniversalOption
         }
       }
 
-      // todo maybe move above app.engine to only run on initialization;
-      // make sure to reload app on any ssr changes if mainSsr is evaluated only once on app startup
       let mainSsr: MainSsr;
       if (typeof ngOptions.bootstrap === 'string') {
         if (typeof __non_webpack_require__ !== 'function')
           throw Error('Make sure to use webpack in order to use string type bootstrap property');
+
+        // remove webpack require cache in order to ensure reload of app ssr bundle
+        const shouldRemoveCache = process.env.REMOVE_WEBPACK_CACHE === 'true' || process.env.APP_ENV === 'development';
+        if (shouldRemoveCache && !!__non_webpack_require__.cache[ngOptions.bootstrap]) {
+          delete __non_webpack_require__.cache[ngOptions.bootstrap];
+        }
+
         mainSsr = __non_webpack_require__(ngOptions.bootstrap);
       } else {
         mainSsr = await ngOptions.bootstrap();
