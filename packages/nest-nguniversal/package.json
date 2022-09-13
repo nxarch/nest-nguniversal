@@ -1,6 +1,6 @@
 {
   "name": "@nxarch/nest-nguniversal",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A NestJS library to serve your NestJS Angular Universal project",
   "publishConfig": {
     "access": "public"

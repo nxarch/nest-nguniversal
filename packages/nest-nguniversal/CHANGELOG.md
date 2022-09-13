@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.3.1](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.3.0...nest-nguniversal@0.3.1) (2022-09-12)
+
+
+### Features
+
+* **general:** add workflow for specific release ([f2160fd](https://github.com/nxarch/nest-nguniversal/commit/f2160fd776e724348056c9db71237a818ed3fd42))
+
 ## [0.3.0](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.2.0...nest-nguniversal@0.3.0) (2022-07-31)
 
 
