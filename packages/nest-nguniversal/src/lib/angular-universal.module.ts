@@ -8,6 +8,7 @@ import { ANGULAR_UNIVERSAL_CACHE, ANGULAR_UNIVERSAL_OPTIONS } from './angular-un
 import { angularUniversalProviders } from './angular-universal.providers';
 import { InMemoryCacheStorage } from './cache/in-memory-cache.storage';
 import { AngularUniversalOptions, CacheOptions } from './interfaces/angular-universal-options.interface';
+import { setupBsReloadWatcher } from './utils/setup-bs-reload-watcher';
 
 @Module({
   providers: [...angularUniversalProviders],
@@ -21,6 +22,8 @@ export class AngularUniversalModule implements OnModuleInit {
 
   static forRoot(options: AngularUniversalOptions): DynamicModule {
     const indexHtml = existsSync(join(options.viewsPath, 'index.original.html')) ? 'index.original.html' : 'index';
+
+    if (process.env.NXARCH_SERVER_AUTO_SYNC === 'true') setupBsReloadWatcher();
 
     options = {
       templatePath: indexHtml,
