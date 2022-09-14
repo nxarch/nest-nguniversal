@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.4.0...nest-nguniversal@0.5.0) (2022-09-14)
+
+
+### Features
+
+* **nest-nguniversal:** add browser sync refresh ([84f8506](https://github.com/nxarch/nest-nguniversal/commit/84f850641225ffe5a94b9d6bc8c71073b00976d9))
+
 ## [0.4.0](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.3.1...nest-nguniversal@0.4.0) (2022-09-13)
 
 
