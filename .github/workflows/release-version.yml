@@ -1,4 +1,4 @@
-name: Release Version
+name: Release Version From Master
 
 on:
   workflow_dispatch:
@@ -33,13 +33,6 @@ jobs:
         with:
           node-version: ${{ inputs.node_version }}
           registry-url: https://registry.npmjs.org
-
-      - name: Merge develop -> master
-        uses: ./.github/actions/merge
-        with:
-          baseBranch: master
-          fromBranch: develop
-          push: false
 
       - name: yarn install
         shell: bash
