@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.0](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.6.1...nest-nguniversal@0.7.0) (2022-10-18)
+
+
+### Features
+
+* **nest-nguniversal:** switch to commonjs ([436585d](https://github.com/nxarch/nest-nguniversal/commit/436585db98ac3f952cf7402ec117f2b11905e1b3))
+
 ### [0.6.1](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.6.0...nest-nguniversal@0.6.1) (2022-09-14)
 
 ## [0.6.0](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.5.0...nest-nguniversal@0.6.0) (2022-09-14)
