@@ -35,7 +35,10 @@ export async function setupUniversal(app: any, ngOptions: AngularUniversalOption
           throw Error('Make sure to use webpack in order to use string type bootstrap property');
 
         // remove webpack require cache in order to ensure reload of app ssr bundle
-        const shouldRemoveCache = process.env.REMOVE_WEBPACK_CACHE === 'true' || process.env.APP_ENV === 'development';
+        // will decrease server side rendering; only use during development!
+        const shouldRemoveCache =
+          (process.env.REMOVE_WEBPACK_CACHE && process.env.REMOVE_WEBPACK_CACHE === 'true') ??
+          process.env.APP_ENV === 'development';
         if (shouldRemoveCache && !!__non_webpack_require__.cache[ngOptions.bootstrap]) {
           delete __non_webpack_require__.cache[ngOptions.bootstrap];
         }
