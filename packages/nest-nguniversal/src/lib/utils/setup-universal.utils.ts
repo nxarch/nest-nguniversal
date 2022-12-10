@@ -6,6 +6,7 @@ import 'zone.js/dist/zone-node';
 import { CacheKeyByOriginalUrlGenerator } from '../cache/cache-key-by-original-url.generator';
 import { AngularUniversalOptions, MainSsr } from '../interfaces/angular-universal-options.interface';
 import { CacheStorage } from '../interfaces/cache-storage.interface';
+import { isNil } from './utilities';
 
 const DEFAULT_CACHE_EXPIRATION_TIME = 60000; // 60 seconds
 
@@ -36,9 +37,10 @@ export async function setupUniversal(app: any, ngOptions: AngularUniversalOption
 
         // remove webpack require cache in order to ensure reload of app ssr bundle
         // will decrease server side rendering; only use during development!
-        const shouldRemoveCache =
-          (process.env.REMOVE_WEBPACK_CACHE && process.env.REMOVE_WEBPACK_CACHE === 'true') ??
-          process.env.APP_ENV === 'development';
+        const shouldRemoveCache = !isNil(process.env.REMOVE_WEBPACK_CACHE)
+          ? process.env.REMOVE_WEBPACK_CACHE
+          : process.env.NODE_ENV === 'development';
+
         if (shouldRemoveCache && !!__non_webpack_require__.cache[ngOptions.bootstrap]) {
           delete __non_webpack_require__.cache[ngOptions.bootstrap];
         }
