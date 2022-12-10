@@ -190,8 +190,7 @@ export class CustomCacheKeyGenerator implements CacheKeyGenerator {
 ### Request and Response Providers
 
 This tool uses `@nguniversal/express-engine` and will properly provide access to the Express Request and Response
-objects in you Angular components. Note that tokens must be imported from the `@nestjs/ng-universal/tokens`,
-not `@nguniversal/express-engine/tokens`.
+objects in you Angular components.
 
 This is useful for things like setting the response code to 404 when your Angular router can't find a page (
 i.e. `path: '**'` in routing):
@@ -199,7 +198,7 @@ i.e. `path: '**'` in routing):
 ```ts
 import { isPlatformServer } from '@angular/common';
 import { Component, Inject, Optional, PLATFORM_ID } from '@angular/core';
-import { RESPONSE } from '@nestjs/ng-universal/tokens';
+import { RESPONSE } from '@nguniversal/express-engine/tokens';
 import { Response } from 'express';
 
 @Component({
