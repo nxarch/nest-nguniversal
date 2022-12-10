@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.7.3](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.7.2...nest-nguniversal@0.7.3) (2022-12-10)
+
+
+### Bug Fixes
+
+* **nest-nguniversal:** adjust webpack cache remove flag ([4f1fa38](https://github.com/nxarch/nest-nguniversal/commit/4f1fa38787534238cf04848a058625e3056d0952))
+
 ### [0.7.2](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.7.1...nest-nguniversal@0.7.2) (2022-12-10)
 
 
