@@ -38,7 +38,7 @@ export async function setupUniversal(app: any, ngOptions: AngularUniversalOption
         // remove webpack require cache in order to ensure reload of app ssr bundle
         // will decrease server side rendering; only use during development!
         const shouldRemoveCache = !isNil(process.env.REMOVE_WEBPACK_CACHE)
-          ? process.env.REMOVE_WEBPACK_CACHE
+          ? process.env.REMOVE_WEBPACK_CACHE === 'true'
           : process.env.NODE_ENV === 'development';
 
         if (shouldRemoveCache && !!__non_webpack_require__.cache[ngOptions.bootstrap]) {
