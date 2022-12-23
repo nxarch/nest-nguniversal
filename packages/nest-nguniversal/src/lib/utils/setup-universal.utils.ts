@@ -1,6 +1,7 @@
 import { Logger } from '@nestjs/common';
 import * as express from 'express';
 import { Request } from 'express';
+import { readdir } from 'fs';
 import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 import { CacheKeyByOriginalUrlGenerator } from '../cache/cache-key-by-original-url.generator';
@@ -41,8 +42,8 @@ export async function setupUniversal(app: any, ngOptions: AngularUniversalOption
           ? process.env.REMOVE_WEBPACK_CACHE === 'true'
           : process.env.NODE_ENV === 'development';
 
-        if (shouldRemoveCache && !!__non_webpack_require__.cache[ngOptions.bootstrap]) {
-          delete __non_webpack_require__.cache[ngOptions.bootstrap];
+        if (shouldRemoveCache) {
+          removeUiBundlesFromCache(ngOptions.bootstrap);
         }
 
         mainSsr = __non_webpack_require__(ngOptions.bootstrap);
@@ -111,4 +112,18 @@ export function getCacheOptions(ngOptions: AngularUniversalOptions) {
     expiresIn: ngOptions.cache.expiresIn || DEFAULT_CACHE_EXPIRATION_TIME,
     keyGenerator: ngOptions.cache.keyGenerator || new CacheKeyByOriginalUrlGenerator(),
   };
+}
+
+function removeUiBundlesFromCache(mainJsPath: string) {
+  const uiFolder = mainJsPath.slice(0, mainJsPath.lastIndexOf('/'));
+
+  readdir(uiFolder, (err: Error | null, files: string[]) => {
+    files.forEach((file) => {
+      const absolutePath = uiFolder + '/' + file;
+
+      if (file.includes('.js') && !!__non_webpack_require__.cache[absolutePath]) {
+        delete __non_webpack_require__.cache[absolutePath];
+      }
+    });
+  });
 }
