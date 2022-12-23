@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.7.4](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.7.3...nest-nguniversal@0.7.4) (2022-12-23)
+
+
+### Bug Fixes
+
+* **nest-nguniversal:** remove js bundles from ui directory ([ea35b54](https://github.com/nxarch/nest-nguniversal/commit/ea35b549fc51b368fb8e1c60fc475bdc2806378f))
+
 ### [0.7.3](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.7.2...nest-nguniversal@0.7.3) (2022-12-10)
 
 
