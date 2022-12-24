@@ -118,12 +118,15 @@ function removeUiBundlesFromCache(mainJsPath: string) {
   const uiFolder = mainJsPath.slice(0, mainJsPath.lastIndexOf('/'));
 
   readdir(uiFolder, (err: Error | null, files: string[]) => {
-    files.forEach((file) => {
-      const absolutePath = uiFolder + '/' + file;
+    // Variable `files` can sometimes be undefined (probably no UI bundles cached) and crash the server
+    if (files !== undefined) {
+      files.forEach((file) => {
+        const absolutePath = uiFolder + '/' + file;
 
-      if (file.includes('.js') && !!__non_webpack_require__.cache[absolutePath]) {
-        delete __non_webpack_require__.cache[absolutePath];
-      }
-    });
+        if (file.includes('.js') && !!__non_webpack_require__.cache[absolutePath]) {
+          delete __non_webpack_require__.cache[absolutePath];
+        }
+      });
+    }
   });
 }
