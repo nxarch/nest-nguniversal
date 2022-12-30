@@ -2,6 +2,7 @@ import { Logger } from '@nestjs/common';
 import * as express from 'express';
 import { Request } from 'express';
 import { readdir } from 'fs';
+import { dirname, join } from 'path';
 import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 import { CacheKeyByOriginalUrlGenerator } from '../cache/cache-key-by-original-url.generator';
@@ -115,11 +116,11 @@ export function getCacheOptions(ngOptions: AngularUniversalOptions) {
 }
 
 function removeUiBundlesFromCache(mainJsPath: string) {
-  const uiFolder = mainJsPath.slice(0, mainJsPath.lastIndexOf('/'));
+  const uiFolder = dirname(mainJsPath);
 
   readdir(uiFolder, (err: Error | null, files: string[]) => {
     files.forEach((file) => {
-      const absolutePath = uiFolder + '/' + file;
+      const absolutePath = join(uiFolder, file);
 
       if (file.includes('.js') && !!__non_webpack_require__.cache[absolutePath]) {
         delete __non_webpack_require__.cache[absolutePath];
