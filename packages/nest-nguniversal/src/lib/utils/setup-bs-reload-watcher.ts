@@ -1,4 +1,4 @@
-import { triggerReload } from '@nxarch/ng-nest';
+import { triggerReload } from './trigger-reload';
 
 export function setupBsReloadWatcher() {
   let isBlocked = false;

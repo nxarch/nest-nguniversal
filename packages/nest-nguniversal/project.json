@@ -1,4 +1,5 @@
 {
+  "name": "nest-nguniversal",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/nest-nguniversal/src",
   "projectType": "library",
@@ -33,7 +34,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/nest-nguniversal"],
+      "outputs": ["{workspaceRoot}/coverage/packages/nest-nguniversal"],
       "options": {
         "jestConfig": "packages/nest-nguniversal/jest.config.ts",
         "passWithNoTests": true
