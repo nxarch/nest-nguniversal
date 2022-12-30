@@ -22,7 +22,6 @@
     "@nestjs/common": "^9.2.1",
     "@nestjs/core": "^9.2.1",
     "@nguniversal/express-engine": "^15.0.0",
-    "@nxarch/ng-nest": "^0.10.2",
     "domino": "^2.1.6",
     "memory-cache": "^0.2.0",
     "tslib": "^2.3.0"
