@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.0](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.7.4...nest-nguniversal@0.8.0) (2022-12-30)
+
+
+### Features
+
+* **nest-nguniversal:** update workspace ([#25](https://github.com/nxarch/nest-nguniversal/issues/25)) ([74cd3e7](https://github.com/nxarch/nest-nguniversal/commit/74cd3e73f7707f6921fa927da71541934bdfa470))
+
+
+### Bug Fixes
+
+* **nest-nguniversal:** fix path construction ([a18b3f7](https://github.com/nxarch/nest-nguniversal/commit/a18b3f7fffd67f12f745281f65559be66a02597b))
+
 ### [0.7.4](https://github.com/nxarch/nest-nguniversal/compare/nest-nguniversal@0.7.3...nest-nguniversal@0.7.4) (2022-12-23)
 
 
