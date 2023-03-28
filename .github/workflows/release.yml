@@ -42,14 +42,14 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
-        run: npx nx affected --base=origin/master --target=version --dryRun
+        run: npx nx run-many --target=version --dryRun --parallel=1
 
       - name: Bump new version and update changelog
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
-        run: npx nx affected --base=origin/master --target=version
+        run: npx nx run-many --target=version --parallel=1
 
       - name: Back-merge master -> develop
         uses: ./.github/actions/merge
